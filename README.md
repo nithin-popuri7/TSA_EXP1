@@ -11,6 +11,19 @@ To Develop a python program to Plot a time series data (population/ market price
 4. Plot the data according to need and can be altered monthly, or yearly.
 5. Display the graph.
 # PROGRAM:
+###POPULATION
+```
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv("POPTHM.csv",parse_dates=["DATE"],index_col="DATE")
+df.head()
+df["2015"].mean()
+df.resample('Y').mean()
+mean=df.resample('Y').mean().plot(kind='line')
+plt.xlabel("Year")
+plt.ylabel("Population(in Thousands)")
+plt.show()
+```
 
 
 
